@@ -1,13 +1,26 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import ModalNav from "./ModalNav";
 
 type Props = {};
 
 const Navbar = (props: Props) => {
+  const [isOpen, setIsOpen] = useState(false);
 
-  const [isOpen, setIsOpen] = useState(false)
+  const variants = {
+    topOpen: { rotateZ: 45, y: 8 },
+    topClose: { rotateY: 0 },
+    midOpen: { opacity: 0 },
+    midClose: { opacity: 1 },
+    botOpen: { rotateZ: -45, y: -8 },
+    botClose: { rotateZ: 0 },
+  };
+
+  const handleHamb = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
     <div className="h-28 bg-main w-full sticky flex justify-between items-center">
@@ -38,11 +51,31 @@ const Navbar = (props: Props) => {
         <Link href="/">Contáctenos</Link>
       </motion.div>
 
-      <div className="space-y-1 p-5 pr-7 md:hidden">
-        <div className="w-8 border border-accent#1 h-1 bg-accent#1" />
-        <div className="w-8 border border-accent#1 h-1 bg-accent#1" />
-        <div className="w-8 border border-accent#1 h-1 bg-accent#1" />
+      <div onClick={handleHamb} className="space-y-1 p-5 pr-7">
+        <motion.div
+          variants={variants}
+          initial="topClose"
+          animate={isOpen ? "topOpen" : "topClose"}
+          className="w-8 border border-accent#1 h-1 bg-accent#1"
+        />
+        <motion.div
+          variants={variants}
+          initial="midClose"
+          animate={isOpen ? "midOpen" : "midClose"}
+          transition={{duration: 0}}
+          className="w-8 border border-accent#1 h-1 bg-accent#1"
+        />
+        <motion.div
+          variants={variants}
+          initial="botClose"
+          animate={isOpen ? "botOpen" : "botClose"}
+          className="w-8 border border-accent#1 h-1 bg-accent#1"
+        />
       </div>
+
+      <AnimatePresence>
+        <ModalNav isOpen={isOpen} />
+      </AnimatePresence>
     </div>
   );
 };
