@@ -10,11 +10,12 @@ module.exports = {
         "accent#1": "#544c41",
         "accent#2": "#c85346"
       },
-      maxWidth: {
-        "main": "1160px"
+      width: {
+        "main": "min(1160px, 95%)"
       },
       fontFamily: {
-        "barieta": "Barieta"
+        "barieta": "Barieta",
+        "p": "Open Sans, sans-serif"
       }
     },
   },

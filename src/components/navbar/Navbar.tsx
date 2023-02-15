@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import MobileNav from "./MobileNav";
-import MenuButton from "./MenuButton";
 import ButtonBase from "@mui/material/ButtonBase";
+import MenuButton from "./MenuButton";
+import MobileNav from "./MobileNav";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,7 +26,7 @@ export const Navbar = () => {
   return (
     <header className={`w-full ${navAlpha === 1 && "bg-neutral-800"} shadow-neutral-900 z-50 overflow-hidden fixed transition-colors ease-in-out duration-[.4s]`}
     >
-      <div className="mx-auto h-16 max-w-main w-[95%] sticky flex justify-between items-center">
+      <div className="mx-auto h-16 w-main sticky flex justify-between items-center">
         <motion.h1
           className="w-full font-barieta text-xl text-accent#2 font-bold first-letter:font-serif first-letter:text-amber-600 first-letter:text-2xl first-letter:font-extralight mx-1"
           initial={{ x: -40, opacity: 0 }}

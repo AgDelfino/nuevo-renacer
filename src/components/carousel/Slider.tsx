@@ -52,7 +52,7 @@ const Slider = ({ children, slides, delay }: Props) => {
           {getDots().map(val => (
             <span key={val} onClick={() => setCurrentSlide(val)}
               className={`w-3 h-3 rounded-full
-              ${currentSlide === val ? "bg-white/80 scale-125" : "bg-white/30"} transition-all duration-300`}
+              ${currentSlide === val ? "bg-white/80 scale-[1.2]" : "bg-white/30"} transition-all duration-300`}
             ></span>
           ))}
         </div>

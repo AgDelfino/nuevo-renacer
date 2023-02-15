@@ -26,7 +26,7 @@ export default function Home() {
           <Carousel.HeroBanner cover={abuelo3} />
           <Carousel.HeroBanner cover={abuelo4} />
         </Carousel.Slider>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic ipsa dolor aliquam alias magni a recusandae iste pariatur sunt? Blanditiis nam ad cumque magnam ea. Ab exercitationem doloribus velit accusamus!
+        <p className='w-main mx-auto text-justify'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic ipsa dolor aliquam alias magni a recusandae iste pariatur sunt? Blanditiis nam ad cumque magnam ea. Ab exercitationem doloribus velit accusamus!
           Aut ullam mollitia necessitatibus consectetur quasi accusantium tenetur nobis nostrum sequi voluptas temporibus iste vero animi veritatis, quidem, maxime repellat fuga. Saepe repellendus harum nostrum optio, quis ex porro nihil!
           Molestiae nemo rerum iste inventore magnam itaque asperiores adipisci ea unde, obcaecati, fugit hic blanditiis, delectus aperiam eaque culpa atque minus saepe rem. Esse itaque deserunt officia assumenda voluptatum tempora.
           Voluptate, provident perspiciatis sequi aperiam accusamus, sit ea deleniti itaque quod quo soluta, libero voluptatem pariatur fugit nobis architecto qui at perferendis vero culpa. Recusandae non delectus eligendi repellendus libero.
