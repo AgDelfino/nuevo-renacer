@@ -12,17 +12,19 @@ export const Navbar = () => {
 
   useEffect(() => {
     window.onscroll = (e) => {
-      if (window.scrollY === 0) {
-        setNavAlpha(0)
-      }
+      if (window.scrollY === 0) setNavAlpha(0)
       else setNavAlpha(1)
     }
     return () => { window.onscroll = null }
   }, [])
+  useEffect(() => {
+    if (isOpen) setNavAlpha(1)
+    else if (window.scrollY === 0) setNavAlpha(0)
+  }, [isOpen])
 
   const links = ["Inicio", "Nosotros", "Galería", "Contáctenos"]
   return (
-    <header className={`w-full ${navAlpha === 1 && "bg-neutral-800"} ${navAlpha && "shadow-sm border-b border-b-neutral-700"} shadow-neutral-900 z-50 overflow-hidden fixed transition-colors ease-in-out duration-[.4s]`}
+    <header className={`w-full ${navAlpha === 1 && "bg-neutral-800"} shadow-neutral-900 z-50 overflow-hidden fixed transition-colors ease-in-out duration-[.4s]`}
     >
       <div className="mx-auto h-16 max-w-main w-[95%] sticky flex justify-between items-center">
         <motion.h1
@@ -51,12 +53,12 @@ export const Navbar = () => {
           }
         </motion.nav>
 
-        <MenuButton isOpen={isOpen} toggleMenu={toggleMenu} setNavAlpha={setNavAlpha} />
+        <MenuButton isOpen={isOpen} toggleMenu={toggleMenu} />
 
       </div>
 
       <AnimatePresence>
-        {isOpen && <MobileNav links={links} toggleMenu={toggleMenu} />}
+        {isOpen && <MobileNav links={links} setIsOpen={setIsOpen} />}
       </AnimatePresence>
     </header >
   );

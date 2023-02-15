@@ -1,5 +1,9 @@
 import Head from 'next/head'
 import { Navbar, Carousel } from "@/components"
+import abuelo1 from "@/assets/abuelos-temp/abuelos-temp-1.jpg"
+import abuelo2 from "@/assets/abuelos-temp/abuelos-temp-2.jpg"
+import abuelo3 from "@/assets/abuelos-temp/abuelos-temp-3.jpg"
+import abuelo4 from "@/assets/abuelos-temp/abuelos-temp-4.jpg"
 
 export default function Home() {
   return (
@@ -13,10 +17,14 @@ export default function Home() {
       <main className='min-h-screen'>
         <Navbar />
         <Carousel.Slider slides={4} delay={3}>
-          <Carousel.HeroBanner />
-          <Carousel.HeroBanner />
-          <Carousel.HeroBanner />
-          <Carousel.HeroBanner />
+          <Carousel.HeroBanner className="text-center text-4xl text-white"
+            cover={abuelo1}
+          >
+            Soy un texto
+          </Carousel.HeroBanner>
+          <Carousel.HeroBanner cover={abuelo2} />
+          <Carousel.HeroBanner cover={abuelo3} />
+          <Carousel.HeroBanner cover={abuelo4} />
         </Carousel.Slider>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic ipsa dolor aliquam alias magni a recusandae iste pariatur sunt? Blanditiis nam ad cumque magnam ea. Ab exercitationem doloribus velit accusamus!
           Aut ullam mollitia necessitatibus consectetur quasi accusantium tenetur nobis nostrum sequi voluptas temporibus iste vero animi veritatis, quidem, maxime repellat fuga. Saepe repellendus harum nostrum optio, quis ex porro nihil!

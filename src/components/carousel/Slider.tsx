@@ -31,7 +31,7 @@ const Slider = ({ children, slides, delay }: Props) => {
       .split("")
       .map((_, i: number) => i + 1)
   }
-
+  //autoplay
   useEffect(() => {
     if (isStop) return
     const interval = setTimeout(autoplay, delay * 1000)
@@ -48,7 +48,7 @@ const Slider = ({ children, slides, delay }: Props) => {
 
       {/*dots */}
       <div className="absolute w-full bottom-0 flex justify-center text-white">
-        <div className="flex gap-x-2 py-4">
+        <div className="flex gap-x-[10px] py-6">
           {getDots().map(val => (
             <span key={val} onClick={() => setCurrentSlide(val)}
               className={`w-3 h-3 rounded-full
