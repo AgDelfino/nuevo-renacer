@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { Navbar } from "@/components"
+import { Navbar, Carousel } from "@/components"
 
 export default function Home() {
   return (
@@ -12,6 +12,12 @@ export default function Home() {
       </Head>
       <main className='min-h-screen'>
         <Navbar />
+        <Carousel.Slider slides={4} delay={3}>
+          <Carousel.HeroBanner />
+          <Carousel.HeroBanner />
+          <Carousel.HeroBanner />
+          <Carousel.HeroBanner />
+        </Carousel.Slider>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic ipsa dolor aliquam alias magni a recusandae iste pariatur sunt? Blanditiis nam ad cumque magnam ea. Ab exercitationem doloribus velit accusamus!
           Aut ullam mollitia necessitatibus consectetur quasi accusantium tenetur nobis nostrum sequi voluptas temporibus iste vero animi veritatis, quidem, maxime repellat fuga. Saepe repellendus harum nostrum optio, quis ex porro nihil!
           Molestiae nemo rerum iste inventore magnam itaque asperiores adipisci ea unde, obcaecati, fugit hic blanditiis, delectus aperiam eaque culpa atque minus saepe rem. Esse itaque deserunt officia assumenda voluptatum tempora.
