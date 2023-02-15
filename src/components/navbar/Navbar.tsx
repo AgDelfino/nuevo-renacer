@@ -11,18 +11,18 @@ export const Navbar = () => {
   const [navAlpha, setNavAlpha] = useState(0)
 
   useEffect(() => {
-    document.onscroll = (e) => {
+    window.onscroll = (e) => {
       if (window.scrollY === 0) {
         setNavAlpha(0)
       }
       else setNavAlpha(1)
     }
-    return () => { document.onscroll = null }
+    return () => { window.onscroll = null }
   }, [])
 
   const links = ["Inicio", "Nosotros", "Galería", "Contáctenos"]
   return (
-    <header className={`w-full bg-neutral-800 bg-opacity-[${navAlpha}] ${navAlpha && "shadow"} shadow-neutral-900 z-50 overflow-hidden fixed transition-colors ease-out duration-300`}
+    <header className={`w-full ${navAlpha === 1 && "bg-neutral-800"} ${navAlpha && "shadow-sm border-b border-b-neutral-700"} shadow-neutral-900 z-50 overflow-hidden fixed transition-colors ease-in-out duration-[.4s]`}
     >
       <div className="mx-auto h-16 max-w-main w-[95%] sticky flex justify-between items-center">
         <motion.h1
