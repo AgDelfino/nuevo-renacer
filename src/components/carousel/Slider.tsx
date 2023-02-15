@@ -34,7 +34,8 @@ const Slider = ({ children, slides, delay }: Props) => {
 
   useEffect(() => {
     if (isStop) return
-    setTimeout(autoplay, delay * 1000)
+    const interval = setTimeout(autoplay, delay * 1000)
+    return () => clearTimeout(interval)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentSlide, isStop])
 
@@ -49,8 +50,9 @@ const Slider = ({ children, slides, delay }: Props) => {
       <div className="absolute w-full bottom-0 flex justify-center text-white">
         <div className="flex gap-x-2 py-4">
           {getDots().map(val => (
-            <span key={val}
-              className="w-3 h-3 rounded-full bg-white/40"
+            <span key={val} onClick={() => setCurrentSlide(val)}
+              className={`w-3 h-3 rounded-full
+              ${currentSlide === val ? "bg-white/80 scale-125" : "bg-white/30"} transition-all duration-300`}
             ></span>
           ))}
         </div>
