@@ -1,25 +1,37 @@
-import React from 'react'
+import React, { MouseEventHandler } from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import { ButtonBase } from '@mui/material'
 
-const MobileNav = () => {
+interface Props {
+  links: string[]
+  toggleMenu: MouseEventHandler
+}
+
+const MobileNav = ({ links, toggleMenu }: Props) => {
 
   const variants = {
-    open: { x: 0, opacity: 1 },
-    close: { x: 300, opacity: 0 }
+    open: { opacity: 1, height: "auto" },
+    close: { opacity: 0, height: 0 }
   }
-
   return (
     <motion.div
       variants={variants}
       initial="close"
       animate="open"
       exit="close"
-      className='h-52 w-[90%] text-center bg-main absolute top-32 left-5 flex flex-col justify-evenly items-center'>
-      <Link href="/">Inicio</Link>
-      <Link href="/">Nosotros</Link>
-      <Link href="/">Galería</Link>
-      <Link href="/">Contáctenos</Link>
+      className='h-52 w-full overflow-hidden font-semibold text-zinc-300'
+    >
+      <hr className='border-[#ffffff40] w-[95%] mx-auto' />
+      {
+        links.map(link =>
+          <Link href="/" key={link} onClick={toggleMenu}>
+            <ButtonBase className="w-full p-2 rounded-md transition-colors">
+              {link}
+            </ButtonBase>
+          </Link>
+        )
+      }
     </motion.div>
   )
 }
