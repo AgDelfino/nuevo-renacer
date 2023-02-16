@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @import url(./fonts/fonts.css);
+@import url(./custom-classes.css);
 
 body{
   background-color: #cecece;

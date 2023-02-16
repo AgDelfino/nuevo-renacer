@@ -1,11 +1,12 @@
 import Head from 'next/head'
-import { Navbar, Carousel } from "@/components"
+import { Navbar, Carousel, Card } from "@/components"
 import abuelo1 from "@/assets/abuelos-temp/abuelos-temp-1.jpg"
 import abuelo2 from "@/assets/abuelos-temp/abuelos-temp-2.jpg"
 import abuelo3 from "@/assets/abuelos-temp/abuelos-temp-3.jpg"
 import abuelo4 from "@/assets/abuelos-temp/abuelos-temp-4.jpg"
 
 export default function Home() {
+  const mobileCardAlpha = "[.5]"
   return (
     <>
       <Head>
@@ -16,6 +17,7 @@ export default function Home() {
       </Head>
       <main className='min-h-screen'>
         <Navbar />
+
         <Carousel.Slider slides={4} delay={3}>
           <Carousel.HeroBanner className="text-center text-4xl text-white"
             cover={abuelo1}
@@ -26,7 +28,26 @@ export default function Home() {
           <Carousel.HeroBanner cover={abuelo3} />
           <Carousel.HeroBanner cover={abuelo4} />
         </Carousel.Slider>
-        <p className='w-main mx-auto text-justify'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic ipsa dolor aliquam alias magni a recusandae iste pariatur sunt? Blanditiis nam ad cumque magnam ea. Ab exercitationem doloribus velit accusamus!
+
+        <div className='sm:grid lg:grid-cols-4 sm:grid-cols-2'>
+          <Card className={`bg-accent#2/${mobileCardAlpha} md:bg-accent#2`} 
+            title="Lorem"
+            content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic ipsa dolor aliquam alias magni a recusandae iste pariatur sunt? Blanditiis nam ad cumque magnam ea. Ab exercitationem doloribus v"
+          />
+          <Card className={`bg-amber-500/${mobileCardAlpha} md:bg-amber-500`} 
+            title="Lorem"
+            content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic ipsa dolor aliquam alias magni a recusandae iste pariatur sunt? Blanditiis nam ad cumque magnam ea. Ab exercitationem doloribus v"
+          />
+          <Card className={`bg-accent#1/${mobileCardAlpha} md:bg-accent#1`} 
+            title="Lorem"
+            content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic ipsa dolor aliquam alias magni a recusandae iste pariatur sunt? Blanditiis nam ad cumque magnam ea. Ab exercitationem doloribus v"
+          />
+          <Card className={`bg-accent#2/${mobileCardAlpha} md:bg-accent#2`} 
+            title="Lorem"
+            content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic ipsa dolor aliquam alias magni a recusandae iste pariatur sunt? Blanditiis nam ad cumque magnam ea. Ab exercitationem doloribus v"
+          />
+        </div>
+        <p className='w-main mx-auto text-justify mt-10'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic ipsa dolor aliquam alias magni a recusandae iste pariatur sunt? Blanditiis nam ad cumque magnam ea. Ab exercitationem doloribus velit accusamus!
           Aut ullam mollitia necessitatibus consectetur quasi accusantium tenetur nobis nostrum sequi voluptas temporibus iste vero animi veritatis, quidem, maxime repellat fuga. Saepe repellendus harum nostrum optio, quis ex porro nihil!
           Molestiae nemo rerum iste inventore magnam itaque asperiores adipisci ea unde, obcaecati, fugit hic blanditiis, delectus aperiam eaque culpa atque minus saepe rem. Esse itaque deserunt officia assumenda voluptatum tempora.
           Voluptate, provident perspiciatis sequi aperiam accusamus, sit ea deleniti itaque quod quo soluta, libero voluptatem pariatur fugit nobis architecto qui at perferendis vero culpa. Recusandae non delectus eligendi repellendus libero.
